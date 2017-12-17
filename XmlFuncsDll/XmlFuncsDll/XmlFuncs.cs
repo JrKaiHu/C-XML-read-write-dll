@@ -66,8 +66,28 @@ namespace XmlFunctions
         public static XMLErrorCode GetXmlData(string strXmlFilePath, string strXmlPath, string strValName, ref string strOutput)
         {
             strOutput = "";
-
             XMLErrorCode nRet = Instance.GetXmlDataFunc(strXmlFilePath, strXmlPath, strValName, ref strOutput);
+
+            return nRet;
+        }
+
+        public static XMLErrorCode GetXmlData(string strXmlFilePath, string strXmlPath, string strValName, ref byte byOutput)
+        {
+            byOutput = 0;
+
+            XMLErrorCode nRet = Instance.GetXmlDataFunc(strXmlFilePath, strXmlPath, strValName, ref Instance.m_strOutput);
+
+            if (nRet == XMLErrorCode.SUCCESS)
+            {
+                try
+                {
+                    byOutput = Convert.ToByte(Instance.m_strOutput);
+                }
+                catch
+                {
+                    nRet = XMLErrorCode.INVALID_PARAMETER_TYPE;
+                }
+            }
 
             return nRet;
         }
@@ -149,34 +169,85 @@ namespace XmlFunctions
                 }
                 catch
                 {
-                    nRet = XMLErrorCode.INVALID_PARAMETER_TYPE;
+                    try
+                    {
+                        bOutput = Convert.ToBoolean(Instance.m_strOutput);
+                    }
+                    catch
+                    {
+                        nRet = XMLErrorCode.INVALID_PARAMETER_TYPE;
+                    }                    
                 }
             }
 
             return nRet;
-        }
+        }        
 
-        public static XMLErrorCode GetXmlData(string strXmlFilePath, string strXmlPath, string strValName, ref byte byOutput)
+        #endregion // for Get Xml data
+
+        #region Set Xml data
+        private XMLErrorCode SetXmlDataFunc(string strXmlFilePath, string strXmlPath, string strValName, string strInput)
         {
-            byOutput = 0;
-
-            XMLErrorCode nRet = Instance.GetXmlDataFunc(strXmlFilePath, strXmlPath, strValName, ref Instance.m_strOutput);
-
-            if (nRet == XMLErrorCode.SUCCESS)
+            try
             {
+                XDocument doc = XDocument.Load(strXmlFilePath);
+
                 try
                 {
-                    byOutput = Convert.ToByte(Instance.m_strOutput);
+                    doc.XPathSelectElement(strXmlPath + "/" + strValName).SetValue(strInput);
+                    doc.Save(strXmlFilePath);
+                    return XMLErrorCode.SUCCESS;
                 }
                 catch
                 {
-                    nRet = XMLErrorCode.INVALID_PARAMETER_TYPE;
+                    try
+                    {
+                        doc.XPathSelectElement(strXmlPath).Attribute(strValName).SetValue(strInput);
+                        doc.Save(strXmlFilePath);
+                        return XMLErrorCode.SUCCESS;
+                    }
+                    catch
+                    {
+                        return XMLErrorCode.INVALID_XML_PATH;
+                    }
                 }
             }
-
-            return nRet;
+            catch
+            {
+                return XMLErrorCode.INVALID_XML_FILE_PATH;
+            }
         }
 
-        #endregion
+        public static XMLErrorCode SetXmlData(string strXmlFilePath, string strXmlPath, string strValName, string strInput)
+        {
+            return Instance.SetXmlDataFunc(strXmlFilePath, strXmlPath, strValName, strInput);
+        }
+
+        public static XMLErrorCode SetXmlData(string strXmlFilePath, string strXmlPath, string strValName, byte byInput)
+        {
+            return Instance.SetXmlDataFunc(strXmlFilePath, strXmlPath, strValName, Convert.ToString(byInput));
+        }
+
+        public static XMLErrorCode SetXmlData(string strXmlFilePath, string strXmlPath, string strValName, int nInput)
+        {
+            return Instance.SetXmlDataFunc(strXmlFilePath, strXmlPath, strValName, Convert.ToString(nInput));
+        }
+
+        public static XMLErrorCode SetXmlData(string strXmlFilePath, string strXmlPath, string strValName, long lInput)
+        {
+            return Instance.SetXmlDataFunc(strXmlFilePath, strXmlPath, strValName, Convert.ToString(lInput));
+        }
+
+        public static XMLErrorCode SetXmlData(string strXmlFilePath, string strXmlPath, string strValName, double dInput)
+        {
+            return Instance.SetXmlDataFunc(strXmlFilePath, strXmlPath, strValName, Convert.ToString(dInput));
+        }
+
+        public static XMLErrorCode SetXmlData(string strXmlFilePath, string strXmlPath, string strValName, bool bInput)
+        {
+            string strInput = bInput ? "1" : "0";
+            return Instance.SetXmlDataFunc(strXmlFilePath, strXmlPath, strValName, strInput);
+        }
+        #endregion // Set Xml data
     }
 }

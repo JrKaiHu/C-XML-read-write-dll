@@ -1,0 +1,9 @@
+F:\Github\CSharp-XML-read-write-dll\XMLTest\XMLTest\bin\Debug\XMLTest.exe.config
+F:\Github\CSharp-XML-read-write-dll\XMLTest\XMLTest\bin\Debug\XMLTest.exe
+F:\Github\CSharp-XML-read-write-dll\XMLTest\XMLTest\bin\Debug\XMLTest.pdb
+F:\Github\CSharp-XML-read-write-dll\XMLTest\XMLTest\obj\Debug\XMLTest.csprojResolveAssemblyReference.cache
+F:\Github\CSharp-XML-read-write-dll\XMLTest\XMLTest\obj\Debug\XMLTest.MainForm.resources
+F:\Github\CSharp-XML-read-write-dll\XMLTest\XMLTest\obj\Debug\XMLTest.Properties.Resources.resources
+F:\Github\CSharp-XML-read-write-dll\XMLTest\XMLTest\obj\Debug\XMLTest.csproj.GenerateResource.Cache
+F:\Github\CSharp-XML-read-write-dll\XMLTest\XMLTest\obj\Debug\XMLTest.exe
+F:\Github\CSharp-XML-read-write-dll\XMLTest\XMLTest\obj\Debug\XMLTest.pdb

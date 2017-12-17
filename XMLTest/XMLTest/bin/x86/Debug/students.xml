@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <ClassA>
+    <students>
+      <student1 name="WolfHu" sex="Male">
+        <score>99</score>
+      </student1>
+      <student2 name="Phoebe" sex="Female">
+        <score>99</score>
+      </student2>
+      <student3 name="Safin" sex="Male">
+        <score>2147483900</score>
+      </student3>
+      <student4 name="Ariel" sex="Female">
+        <score>20</score>
+      </student4>
+    </students>
+  </ClassA>
+  <ClassB>
+    <students>
+      <student1 name="Keren" sex="Female">
+        <score>99</score>
+      </student1>
+      <student2 name="Daniel" sex="Male">
+        <score>85</score>
+      </student2>
+      <student3 name="Ken" sex="Male">
+        <score>0.55587</score>
+      </student3>
+      <student4 name="Ting" sex="Female">
+        <score>1</score>
+      </student4>
+    </students>
+  </ClassB>
+</root>

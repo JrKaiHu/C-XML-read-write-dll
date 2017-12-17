@@ -1,0 +1,5 @@
+F:\Github\CSharp-XML-read-write-dll\XmlFuncsDll\XmlFuncsDll\bin\Debug\XmlFuncsDll.dll
+F:\Github\CSharp-XML-read-write-dll\XmlFuncsDll\XmlFuncsDll\bin\Debug\XmlFuncsDll.pdb
+F:\Github\CSharp-XML-read-write-dll\XmlFuncsDll\XmlFuncsDll\obj\Debug\XmlFuncsDll.csprojResolveAssemblyReference.cache
+F:\Github\CSharp-XML-read-write-dll\XmlFuncsDll\XmlFuncsDll\obj\Debug\XmlFuncsDll.dll
+F:\Github\CSharp-XML-read-write-dll\XmlFuncsDll\XmlFuncsDll\obj\Debug\XmlFuncsDll.pdb

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<WorkData>
+  <Index_Station>
+    <Index_Motor_Offset>0</Index_Motor_Offset>
+    <PC1_IP>192.168.0.1</PC1_IP>
+    <PC1_A_Port>5000</PC1_A_Port>
+    <PC1_B_Port>5001</PC1_B_Port>
+    <PC1_C_Port>5002</PC1_C_Port>
+    <PC2_IP>192.168.0.2</PC2_IP>
+    <PC2_A_Port>5000</PC2_A_Port>
+    <PC2_B_Port>5001</PC2_B_Port>
+    <PC2_C_Port>5002</PC2_C_Port>
+  </Index_Station>
+  <Loader_Station>
+    <NozzleNumber>2</NozzleNumber>
+    <NozzlePitch>40</NozzlePitch>
+    <TrayNumber>1</TrayNumber>
+    <TraySafetyZ>3</TraySafetyZ>
+  </Loader_Station>
+  <Unloader_Station>
+    <NozzleNumber>2</NozzleNumber>
+    <NozzlePitch>40</NozzlePitch>
+    <TrayNumber>1</TrayNumber>
+    <TraySafetyZ>3</TraySafetyZ>
+  </Unloader_Station>
+  <Store_Station>
+    <TrayEmpytSRCheck>1</TrayEmpytSRCheck>
+    <TrayFullSRCheck>1</TrayFullSRCheck>
+  </Store_Station>
+  <CCD_Data>
+    <CCD1 ExposureTime="1500" TrgExposureTime="100" GainRaw="0" DigitialShift="0" RotateParm="2" PixelDist="0.016949153" SaveImage="0" SaveNgImage="0" />
+    <CCD2 ExposureTime="1500" TrgExposureTime="100" GainRaw="0" DigitialShift="0" RotateParm="0" PixelDist="0.016949153" SaveImage="0" SaveNgImage="0" />
+  </CCD_Data>
+  <TrayData1>
+    <Tray1 PickZ="-26.3" DropZ="-19" Ma="0" FileName="Load_Tray.xls" />
+  </TrayData1>
+  <TrayData2>
+    <Tray1 PickZ="-17" DropZ="-15" Ma="0" FileName="Unload_Tray.xls" />
+  </TrayData2>
+</WorkData>
